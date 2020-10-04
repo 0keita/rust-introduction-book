@@ -6,10 +6,10 @@ enum MyError {
 }
 
 impl fmt::Display for MyError {
-    fn fmt(&self, f: &mut fmt::Formatter<`_>) -> fmt::Result {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         match self {
-            MyError::Io(cause) => write!("I/O Error: {}", cause),
-            MyError::Num(cause) => write!("Parse Error: {}", cause),
+            MyError::Io(cause) => write!(f, "I/O Error: {}", cause),
+            MyError::Num(cause) => write!(f, "Parse Error: {}", cause),
         }
     }
 }
@@ -27,7 +27,7 @@ fn get_int_from_file() -> Result<i32, MyError> {
         .trim()
         .parse::<i32>()
         .map(|t| t * 2)
-        .map_err(|e| MyError::Num(e));
+        .map_err(|e| MyError::Num(e))
 }
 
 fn main() {
