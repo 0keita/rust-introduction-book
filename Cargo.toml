@@ -2,5 +2,6 @@
 
 members = [
     "samplecli",
-    "todo"
+    "todo",
+    "mandelbrot"
 ]
