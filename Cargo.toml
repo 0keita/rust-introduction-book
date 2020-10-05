@@ -3,5 +3,6 @@
 members = [
     "samplecli",
     "todo",
-    "mandelbrot"
+    "mandelbrot",
+    "numberplace"
 ]
