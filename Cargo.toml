@@ -4,5 +4,6 @@ members = [
     "samplecli",
     "todo",
     "mandelbrot",
-    "numberplace"
+    "numberplace",
+    "ui_demo"
 ]
